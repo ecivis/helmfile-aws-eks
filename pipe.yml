@@ -1,0 +1,40 @@
+name: Helmfile AWS EKS Bitbucket Pipelines Pipe
+image: ecivis/helmfile-aws-eks:0.0.8
+description: Use Helmfile to sync a Helm chart to an AWS EKS cluster
+category: Deployment
+repository: https://github.com/ecivis/helmfile-aws-eks
+vendor:
+  name: eCivis
+  website: https://ecivis.com
+maintainer:
+  name: Joseph Lamoree
+  website: https://ecivis.com
+tags:
+  - bitbucket-pipelines
+  - pipes
+  - bash
+  - helmfile
+  - helm
+  - aws
+  - eks
+variables:
+  - name: AWS_REGION
+    default: <required>
+  - name: AWS_ACCESS_KEY_ID
+    default: <required>
+  - name: AWS_SECRET_ACCESS_KEY
+    default: <required>
+  - name: TARGET_ROLE_ARN
+    default: ""
+  - name: HELMFILE_ENVIRONMENT
+    default: <required>
+  - name: CHART_PATH
+    default: <required>
+  - name: CLUSTER_NAME
+    default: <required>
+  - name: KUBECTL_CONTEXT
+    default: <required>
+  - name: CHART_OVERRIDES
+    default: []
+  - name: DEBUG
+    default: "false"
